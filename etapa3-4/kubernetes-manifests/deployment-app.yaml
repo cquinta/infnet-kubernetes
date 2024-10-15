@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: simpleapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simpleapp
+  template:
+    metadata:
+      labels:
+        app: simpleapp
+    spec:
+      containers:
+      - name: simpleapp-container
+        image: carlosquintanilha/simpleapp:redis
+        ports:
+        - containerPort: 8000
+    
