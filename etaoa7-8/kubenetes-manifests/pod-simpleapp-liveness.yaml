@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simpleapp-liveness-pod
+  labels:
+    app: simpleapp
+spec:
+  containers:
+    - name: simpleapp-container
+      image: carlosquintanilha/simpleapp:v0.1
+      ports:
+      - containerPort: 8000
+      imagePullPolicy: Always
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8000
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        timeoutSeconds: 1
+        successThreshold: 1
+        failureThreshold: 3
