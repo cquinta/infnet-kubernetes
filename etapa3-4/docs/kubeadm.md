@@ -22,7 +22,7 @@ Instalar o containerd:
 ```bash
 wget https://github.com/containerd/containerd/releases/download/v1.7.23/containerd-1.7.23-linux-amd64.tar.gz
 
-sudo tar Cxzvf /usr/local containerd-<x>
+sudo tar Cxzvf /usr/local containerd-1.7.23-linux-amd64.tar.gz
 
 wget https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
 

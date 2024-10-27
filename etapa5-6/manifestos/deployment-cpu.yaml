@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-test
+spec:
+  replicas: 1  # Quantidade de réplicas (pods) que você deseja rodar
+  selector:
+    matchLabels:
+      app: stress
+  template:
+    metadata:
+      labels:
+        app: stress
+    spec:
+      containers:
+      - name: stress
+        image: vish/stress
+        args:
+          - -cpus
+          - "2"
+        resources:
+          limits:
+            cpu: "0.5"  # Limite de CPU para o container
+            memory: "200Mi"  # Limite de memória
