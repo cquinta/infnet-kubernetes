@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-pod-pvc1
+spec:
+  volumes:
+    - name: "pv0002"
+      
+  containers:
+    - name: ubuntu-ctnr
+      image: ubuntu
+      ports:
+      - containerPort: 80
+      command: ['sleep', '3600']
+      volumeMounts:
+        - name: pv0002
+          mountPath: "/data"

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-memory-limits
+  namespace: cpu-example
+spec:
+  limits:
+    - type: Container
+      default:
+        cpu: "500m"       # Limite padrão de CPU para cada container
+        memory: "512Mi"   # Limite padrão de memória para cada container
+      defaultRequest:
+        cpu: "200m"       # Solicitação padrão de CPU para cada container
+        memory: "256Mi"   # Solicitação padrão de memória para cada container
+      max:
+        cpu: "2"          # Limite máximo de CPU que um container pode solicitar
+        memory: "1Gi"     # Limite máximo de memória que um container pode solicitar
+      min:
+        cpu: "100m"       # Solicitação mínima de CPU permitida para cada container
+        memory: "128Mi"   # Solicitação mínima de memória permitida para cada container

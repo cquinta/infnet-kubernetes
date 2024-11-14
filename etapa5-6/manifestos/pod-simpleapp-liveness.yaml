@@ -4,6 +4,7 @@ metadata:
   name: simpleapp-liveness-pod
   labels:
     app: simpleapp
+    env: laboratorio
 spec:
   containers:
     - name: simpleapp-container
@@ -20,3 +21,4 @@ spec:
         timeoutSeconds: 2
         successThreshold: 1
         failureThreshold: 3
+    

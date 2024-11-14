@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: simpleapp-liveness-v2-pod
+  name: simpleapp-liveness-v1-pod
   labels:
     app: simpleapp
 spec:

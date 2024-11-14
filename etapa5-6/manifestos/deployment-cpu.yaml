@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: stress-test
+  namespace: cpu-example
 spec:
   replicas: 1  # Quantidade de réplicas (pods) que você deseja rodar
   selector:

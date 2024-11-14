@@ -11,8 +11,14 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     hostname = socket.gethostname()
+    return {"versao":1,"hostname": hostname }
+            
+@app.get("/req")
+def read_req():
+    hostname = socket.gethostname()
     redis.incr("key")
-    return {"hostname": hostname, "counter": redis.get("key")}
+    return {"versao":1,"hostname": hostname,"count":redis.get("key")}
+
 
 @app.get("/health")
 def health():

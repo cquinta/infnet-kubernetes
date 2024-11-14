@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: cpu-memory-quota
+  namespace: cpu-example
+spec:
+  hard:
+    requests.cpu: "0.250"          # Limite de solicitação de CPU total para o namespace
+    requests.memory: "0.250Gi"     # Limite de solicitação de memória total para o namespace
+    limits.cpu: "1"            # Limite de uso de CPU total para o namespace
+    limits.memory: "1Gi"       # Limite de uso de memória total para o namespace
